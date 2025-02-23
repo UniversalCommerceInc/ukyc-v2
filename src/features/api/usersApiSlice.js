@@ -9,17 +9,17 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: creds,
       }),
-      // invalidatesTags: ["User"],
-      // async onQueryStarted(arg, { dispatch, queryFulfilled }) {
-      //   try {
-      //     // Wait for login to resolve
-      //     await queryFulfilled;
-      //     // Dispatch the `me` query
-      //     dispatch(usersApiSlice.endpoints.me.initiate());
-      //   } catch (error) {
-      //     console.error("Login failed:", error);
-      //   }
-      // },
+      invalidatesTags: ["User"],
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        try {
+          // Wait for login to resolve
+          await queryFulfilled;
+          // Dispatch the `me` query
+          dispatch(usersApiSlice.endpoints.me.initiate());
+        } catch (error) {
+          console.error("Login failed:", error);
+        }
+      },
     }),
     register: builder.mutation({
       query: (creds) => ({
@@ -32,7 +32,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: () => ({
         url: `${USERS_URL}/me`
       }),
-      // providesTags: ["User"],
+      providesTags: ["User"],
     }),
   }),
 });

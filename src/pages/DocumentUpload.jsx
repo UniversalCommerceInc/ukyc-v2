@@ -49,7 +49,7 @@ const DocumentUpload = ({ idType, onNext }) => {
   // 1) Fetch user data (KYC) from server
   // ----------------------------------------------------------------------
   const { data: me } = useMeQuery();
-  const lastKycType = me?.kycs?.[me.kycs.length - 1]?.idType?.toLowerCase() || "";
+  // const lastKycType = me?.kycs?.[me.kycs.length - 1]?.idType?.toLowerCase() || "";
 
   // ----------------------------------------------------------------------
   // 2) State for capturing front/back
@@ -74,6 +74,13 @@ const DocumentUpload = ({ idType, onNext }) => {
 
   // MUI media query
   const isSmallScreen = useMediaQuery("(max-width:600px)");
+
+  const [lastKycType, setLastKycType] = useState("");
+  useEffect(() => {
+    if (me && me.kycs && me.kycs.length > 0) {
+      setLastKycType(me.kycs[me.kycs.length - 1].idType.toLowerCase());
+    }
+  }, [me]);
 
   // Refs
   const webcamRef = useRef(null);

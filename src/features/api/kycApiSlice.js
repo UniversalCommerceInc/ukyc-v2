@@ -10,6 +10,7 @@ export const kycApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: creds,
       }),
+      invalidatesTags: ["User"],
     }),
     // Query for fetching KYC data by ID
     getKycData: builder.query({

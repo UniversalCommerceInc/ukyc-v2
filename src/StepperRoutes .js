@@ -239,7 +239,7 @@ const StepperRoutes = () => {
   });
 
   const [nationalityData, setNationalityData] = useState(null); // Store nationality data
-  const [kycId, setKycId] = useState(id || me?.kycs?.[me?.kycs?.length - 1]?.kycId);
+  const [kycId, setKycId] = useState((id || me?.kycs?.[me?.kycs?.length - 1]?.kycId) || null);
   // Initialize KYC ID with the URL param if available
   const [docImg, setDocImg] = useState(null); // Store document image from DocumentUpload
 

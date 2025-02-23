@@ -9,6 +9,7 @@ export const assetUploadApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: file,
       }),
+      invalidatesTags: ["User"],
     }),
   }),
 });

@@ -71,7 +71,7 @@ function AppWithNavbar() {
         <Route path="/steps/personal-info" element={<StepperRoutes />} />
 
         {/* Private Routes */}
-        <Route element={<PrivateRoute />}>
+        {/* <Route element={<PrivateRoute />}> */}
           <Route path="/steps/*" element={<RedirectHandler />}>
             {/* Render the StepperRoutes for step navigation */}
             <Route path="*" element={<StepperRoutes />} />
@@ -81,7 +81,7 @@ function AppWithNavbar() {
 
           {/* RedirectHandler to determine navigation */}
           <Route path="/" element={<RedirectHandler />} />
-        </Route>
+        {/* </Route> */}
 
         {/* Catch-all route to redirect to SignIn */}
         <Route path="*" element={<Navigate to="/signin" />} />
