@@ -12,7 +12,7 @@ import {
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Consent from "./pages/Consent";
-import StepperRoutes from "./StepperRoutes ";
+// import StepperRoutes from "./StepperRoutes ";
 import DocumentUpload from "./pages/DocumentUpload";
 import LiveSelfieCapture from "./pages/LiveSelfieCapture";
 import KycDetails from "./pages/KycDetails";
@@ -21,6 +21,7 @@ import RedirectHandler from "./components/RedirectHandler";
 import PrivateRoute from "./components/PrivateRoute";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar";
+import StepperRoutes from "./StepperRoutes";
 // import VerticalStepper from "./components/VerticalStepper";
 // import PersonalInfoForm from "./components/forms/PersonalInfoForm";
 // import NationalityForm from "./components/forms/NationalityForm";
